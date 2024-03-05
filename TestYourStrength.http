@@ -1,0 +1,6 @@
+@TestYourStrength_HostAddress = http://localhost:5231
+
+GET {{TestYourStrength_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
