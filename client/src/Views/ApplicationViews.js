@@ -19,7 +19,11 @@ export const ApplicationViews = () => {
       <Routes>
         <Route path="/" element={commonHomeContent} />
         <Route path="/home" element={commonHomeContent} />
-        {/* <Route path="/account" element={<Account />} /> */}
+        {/* <Route path="/languages" element={<Languages />} /> */}
+        {/* <Route path="/questions" element={QuestionDetails} /> */}
+        {/* <Route path="/questions/answers" element={Answers} /> */}
+        
+
       </Routes>
     );
   };
