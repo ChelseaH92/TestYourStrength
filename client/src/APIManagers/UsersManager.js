@@ -1,15 +1,15 @@
 
 const apiUrl = "https://localhost:5001";
-
+ 
 export const login = (userObject) => {
-  return fetch(`${apiUrl}/api/users/getbyemail?email=${userObject.email}`)
+  return fetch(`${apiUrl}/api/users/${userObject.email}`)
   .then((r) => r.json())
     .then((userProfile) => {
       if(userProfile.id){
         localStorage.setItem("userProfile", JSON.stringify(userProfile));
         return userProfile
       }
-      else{
+      else {
         return undefined
       }
     });

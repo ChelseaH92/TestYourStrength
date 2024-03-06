@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate } from "react-router-dom";
-import { register } from "../Managers/UserProfileManager";
+import { register } from "../APIManagers/UsersManager";
 
 
 export default function Register({setIsLoggedIn}) {
@@ -30,7 +30,7 @@ export default function Register({setIsLoggedIn}) {
     <Form onSubmit={registerClick}>
       <fieldset>
         <FormGroup>
-          <Label htmlFor="userName">UserName</Label>
+          <Label htmlFor="userName">Username</Label>
           <Input id="userName" type="text" onChange={e => setUserName(e.target.value)} />
         </FormGroup>
         <FormGroup>
