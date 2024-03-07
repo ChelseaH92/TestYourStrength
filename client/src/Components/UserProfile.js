@@ -15,6 +15,7 @@ export const Account = () => {
         })
         .catch(error => console.error('Error fetching data:', error));
     }, []); 
+    
   console.log(userData)
   
     return (
