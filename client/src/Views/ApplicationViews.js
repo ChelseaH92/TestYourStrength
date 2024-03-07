@@ -5,12 +5,12 @@ import { ExplainPage } from "../Components/ExplainPage";
 import { Languages } from "../Components/Languages/Languages";
 import { Results } from "../Components/Results";
 import Account from "../Components/UserProfile";
-import { QuestionList } from "../Components/Questions/QuestionList";
+import QuestionsList from "../Components/Questions/QuestionList";
+import AnswersList from "../Components/Answers/AnswerList";
 
 export const ApplicationViews = () => {
     const localUser = localStorage.getItem("userProfile")
     const strengthUser = JSON.parse(localUser)
-    strengthUser.languageId = 1
 
     const pickMandarin = () => {
         strengthUser.languageId = 2
@@ -53,7 +53,8 @@ export const ApplicationViews = () => {
         <Route path="/levels" element={<Levels />} />
         <Route path="/explainpage" element={<ExplainPage />} />
         <Route path="/languages" element={<Languages />} />
-        <Route path="/test" element={<QuestionList />} />
+        <Route path="/test" element={<QuestionsList />} />
+        <Route path="/answer" element={<AnswersList />} />
         <Route path="/results" element={<Results />} />
       </Routes>
     );

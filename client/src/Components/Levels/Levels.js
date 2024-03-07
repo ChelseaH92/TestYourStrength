@@ -37,7 +37,7 @@ export const Levels = () => {
 
     return (
         <div className="home-container">
-        <div className="home-content">
+        <div className="level-buttons">
           <h1 className="title--main">Choose Your Difficulty</h1>
           <br />
           <button onClick={levelA1}><Link to = "/test">A1 / Novice</Link></button>

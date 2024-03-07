@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { getQuestionById } from "../../APIManagers/QuestionsManager";
+import { getAnswerById } from "../../APIManagers/AnswersManager";
 import { useParams } from "react-router-dom";
 import { Card, CardBody } from "reactstrap";
 import { Link } from "react-router-dom";
 
-export const QuestionDetails = () => {
-    const [questionDetails, setQuestionDetails] = useState({});
+export const AnswerDetails = () => {
+    const [answerDetails, setAnswerDetails] = useState({});
     const { id } = useParams();
 
     useEffect(() => {
-        getQuestionById(id)
+        getAnswerById(id)
             .then((data) =>
-            {setQuestionDetails(data);
+            {setAnswerDetails(data);
             })
             .catch((error) => {
-                console.log("Error fetching user questions:", error);
+                console.log("Error fetching user answers:", error);
             });
     }, [id]);
 
     const levelId = localStorage.getItem("levelId");
+    
     const languageId = localStorage.getItem("languageId");
 
-    const filteredQuestionDetails = {
-        ...questionDetails,
-        question: questionDetails?.question.filter(question => question.levelId === levelId && question.languageId === languageId)
+    const filteredAnswerDetails = {
+        ...answerDetails,
+        answer: answerDetails?.answer.filter(answer => answer.levelId === levelId && answer.languageId === languageId)
     };
 
     return (
         <>
-        {console.log(id)}
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-sm-12 col-lg-6">
@@ -36,11 +36,11 @@ export const QuestionDetails = () => {
 
           <CardBody>
             <p>
-            <Link to={`/questions/${filteredQuestionDetails.id}`}>
-                <strong>Question: {filteredQuestionDetails.question}</strong>
+            <Link to={`/answers/${filteredAnswerDetails.id}`}>
+                <strong>Answers: {filteredAnswerDetails.question}</strong>
             </Link>
             </p>
-            <p>{filteredQuestionDetails.content}</p>
+            <p>{filteredAnswerDetails.content}</p>
             </CardBody>
     </Card>
         </div>
