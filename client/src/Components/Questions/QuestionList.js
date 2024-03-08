@@ -19,7 +19,6 @@ const QuestionsList = () => {
 
   })
   }, []);
-console.log(answers)
 
   const getQuestions = () => {
       getAllQuestions().then(allQuestions => setQuestions(allQuestions)); 
@@ -35,6 +34,7 @@ console.log(answers)
 <div className="container">
   <div className="row justify-content-center">
     <div className="cards-column">
+    {/* <QuestionForm updateQuestionsState = {getQuestions}/> */}
       {questions.filter(q => q.levelId === strengthUser.levelId && q.languageId === strengthUser.languageId).map((question, index) => (
         <div key={question.id}>
           <Question question={question} />
@@ -53,4 +53,3 @@ console.log(answers)
 };
 
 export default QuestionsList;
-{/* <QuestionForm updateQuestionsState = {getQuestions}/> */}

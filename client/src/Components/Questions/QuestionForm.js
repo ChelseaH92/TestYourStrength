@@ -60,12 +60,12 @@ const navigate = useNavigate();
                     </div>
             </fieldset>
 
-            {/* <fieldset>
+            <fieldset>
                     <div className="form-group">
-                        <label htmlFor="content">content:</label>
+                        <label htmlFor="answer">Answer:</label>
                         <input
                             type="text"
-                            id="content"
+                            id="answerId"
                             value={newQuestion.content}
                             onChange={
                                 (event) => {
@@ -75,7 +75,7 @@ const navigate = useNavigate();
                                 }
                             } />
                     </div>
-            </fieldset> */}
+            </fieldset>
 
     <button
             onClick={(clickEvent) => clickTheSaveButton(clickEvent)} className="btn btn-primary">Save Changes</button>

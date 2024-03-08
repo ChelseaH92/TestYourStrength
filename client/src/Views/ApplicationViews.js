@@ -3,10 +3,13 @@ import { Levels } from "../Components/Levels/Levels";
 import { Button } from "reactstrap";
 import { ExplainPage } from "../Components/ExplainPage";
 import { Languages } from "../Components/Languages/Languages";
-import { Results } from "../Components/Results";
-import Account from "../Components/UserProfile";
+
 import QuestionsList from "../Components/Questions/QuestionList";
 import AnswersList from "../Components/Answers/AnswerList";
+import Account from "../Components/Users/UserProfile";
+
+import { AdminList } from "../Components/Users/AdminList";
+import { EditUser } from "../Components/Users/AdminEdit";
 
 export const ApplicationViews = () => {
     const localUser = localStorage.getItem("userProfile")
@@ -50,12 +53,14 @@ export const ApplicationViews = () => {
         <Route path="/" element={commonHomeContent} />
         <Route path="/home" element={commonHomeContent} />
         <Route path="/account" element={<Account />} />
+        <Route path="/admin" element={<AdminList />} />
+        <Route path="/admin/edit/:id" element={<EditUser />} />
         <Route path="/levels" element={<Levels />} />
         <Route path="/explainpage" element={<ExplainPage />} />
         <Route path="/languages" element={<Languages />} />
         <Route path="/test" element={<QuestionsList />} />
         <Route path="/answer" element={<AnswersList />} />
-        <Route path="/results" element={<Results />} />
+        {/* <Route path="/results" element={<Results />} /> */}
       </Routes>
     );
   };
