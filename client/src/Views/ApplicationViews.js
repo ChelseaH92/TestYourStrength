@@ -10,6 +10,7 @@ import Account from "../Components/Users/UserProfile";
 
 import { AdminList } from "../Components/Users/AdminList";
 import { EditUser } from "../Components/Users/AdminEdit";
+// import Login from "../Auth/Login";
 
 export const ApplicationViews = () => {
     const localUser = localStorage.getItem("userProfile")
@@ -30,7 +31,6 @@ export const ApplicationViews = () => {
         <div className="home-content">
           <h1 className="title--main">Choose Your Fighter</h1>
           <br />
-          <button onClick={() => console.log(strengthUser)}>Test</button>
           <Button onClick={pickMandarin}>
           <Link to = "/levels">Mandarin Chinese</Link>
           </Button>
@@ -52,6 +52,7 @@ export const ApplicationViews = () => {
       <Routes>
         <Route path="/" element={commonHomeContent} />
         <Route path="/home" element={commonHomeContent} />
+        {/* <Route path="/login" element={<Login/>} /> */}
         <Route path="/account" element={<Account />} />
         <Route path="/admin" element={<AdminList />} />
         <Route path="/admin/edit/:id" element={<EditUser />} />

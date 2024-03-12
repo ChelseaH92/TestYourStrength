@@ -10,7 +10,10 @@ const QuestionsList = () => {
 
   const [answers, setAnswers] = useState([]);
 
+  const [chosenAnswer, setChosenAnswer] = useState({})
+
   useEffect(() => {
+
   getAllAnswers()
   .then((theseAnswers) => {
     let filteredAnswers = theseAnswers.filter((a) => a.languageId === strengthUser.languageId && a.levelId === strengthUser.levelId)
@@ -40,7 +43,12 @@ const QuestionsList = () => {
           <Question question={question} />
           {answers.slice(index * 5, index * 5 + 5).map((answer) => (
             <div key={answer.id}>
-              <input type="radio" name={`question${index + 1}`} id={`answer${answer.id}`} value={answer.id} />
+              <input type="radio" name={`question${index + 1}`} id="id" value={answer.id}   onChange={
+                                (event) => {
+                                    const copy = { ...chosenAnswer }
+                                    copy.id = event.target.value
+                                    setChosenAnswer(copy)
+                                }} />
               <label htmlFor={`answer${answer.id}`}>{answer.string}</label>
             </div>
           ))}
