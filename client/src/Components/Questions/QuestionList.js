@@ -12,6 +12,10 @@ const QuestionsList = () => {
 
   const [chosenAnswer, setChosenAnswer] = useState({})
 
+  const [userChoice, setUserChoice] = useState()
+
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+
   useEffect(() => {
 
   getAllAnswers()
@@ -33,6 +37,35 @@ const QuestionsList = () => {
     getQuestions();
   }, []); 
 
+  const handleAnswerChange = (event, questionIndex) => {
+    const selectedAnswerId = parseInt(event.target.value);
+    const question = questions.find((q) =>  q?.answerId === selectedAnswerId);
+    const correctAnswerId = question?.answerId;
+    setUserChoice(selectedAnswerId)
+
+    // if / else I added here in case this breaks it
+    if (selectedAnswerId === correctAnswerId) {
+
+      console.log("Correct answer!");
+    
+    } else {
+      console.log(selectedAnswerId)
+      console.log(correctAnswerId)
+      console.log("Incorrect answer. Please try again.");
+    }
+
+    setChosenAnswer({
+      ...chosenAnswer,
+      [`question${questionIndex + 1}`]: selectedAnswerId,
+    });
+  };
+
+  const handleSubmit = () => {
+    // console.log("Chosen answers:", chosenAnswer);
+    console.log(correctAnswers);
+  };
+
+
   return (
 <div className="container">
   <div className="row justify-content-center">
@@ -40,18 +73,19 @@ const QuestionsList = () => {
     {/* <QuestionForm updateQuestionsState = {getQuestions}/> */}
       {questions.filter(q => q.levelId === strengthUser.levelId && q.languageId === strengthUser.languageId).map((question, index) => (
         <div key={question.id}>
-          <Question question={question} />
+          <Question question={question} userChoice={userChoice} setCorrectAnswers={setCorrectAnswers} correctAnswers={correctAnswers}/>
           {answers.slice(index * 5, index * 5 + 5).map((answer) => (
             <div key={answer.id}>
-              <input type="radio" name={`question${index + 1}`} id="id" value={answer.id}   onChange={
-                                (event) => {
-                                    const copy = { ...chosenAnswer }
-                                    copy.id = event.target.value
-                                    setChosenAnswer(copy)
-                                }} />
+              <input type="radio" name={`${question.id}`} id={`answer${answer.id}`} value={answer.id}   onChange={(event) =>
+                          handleAnswerChange(event, index)
+                        }
+                      />
               <label htmlFor={`answer${answer.id}`}>{answer.string}</label>
             </div>
           ))}
+          {index === 2 && (
+                  <button onClick={handleSubmit}>Submit Answers</button>
+                )}
         </div>
       ))}
     </div>
