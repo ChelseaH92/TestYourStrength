@@ -3,6 +3,7 @@ import { getAllQuestions } from "../../APIManagers/QuestionsManager";
 import { Question } from "./Question";
 import { getAllAnswers } from "../../APIManagers/AnswersManager";
 import { Answer } from "../Answers/Answer";
+import { useNavigate } from "react-router-dom";
 // import { QuestionForm } from "./QuestionForm";
 
 const QuestionsList = () => {
@@ -49,8 +50,8 @@ const QuestionsList = () => {
       console.log("Correct answer!");
     
     } else {
-      console.log(selectedAnswerId)
-      console.log(correctAnswerId)
+      // console.log(selectedAnswerId)
+      // console.log(correctAnswerId)
       console.log("Incorrect answer. Please try again.");
     }
 
@@ -60,9 +61,12 @@ const QuestionsList = () => {
     });
   };
 
+  const navigate = useNavigate();
+  
   const handleSubmit = () => {
-    // console.log("Chosen answers:", chosenAnswer);
-    console.log(correctAnswers);
+    strengthUser.score = correctAnswers
+    localStorage.setItem("userProfile", JSON.stringify(strengthUser))
+    navigate("/results")
   };
 
 

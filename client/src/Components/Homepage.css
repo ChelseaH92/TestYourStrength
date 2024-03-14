@@ -1,0 +1,10 @@
+.homepage-container {
+    background-image: url("C:\\Users\\gotho\\workspace\\TestYourStrength\\client\\public\\Images\\Circus Poster.png");
+    background-color: #ffffff;
+    position: absolute;
+    height: 110%;
+    width: 100%;
+    border: 1px solid black;
+    background-size: cover;
+
+}
