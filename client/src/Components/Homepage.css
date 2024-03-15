@@ -8,3 +8,16 @@
     background-size: cover;
 
 }
+
+.enter-button {
+    cursor: pointer;
+    border: 1px solid #000000;
+    background-color: transparent;
+    height: 60px;
+    width: 275px;
+    color: #000000;
+    font-size: 3em; 
+    font-family: "Arial", sans-serif; 
+    font-weight: bold;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}

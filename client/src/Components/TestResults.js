@@ -3,7 +3,7 @@ import './TestResults.css'
 
 const TestResults = ({ chosenAnswers }) => {
   
-  const [scoreRange, setScoreRange] = useState('');
+  const [scoreRange, setScoreRange] = useState({});
 
   const localUser = localStorage.getItem("userProfile");
   const strengthUser = JSON.parse(localUser);
@@ -14,21 +14,23 @@ const TestResults = ({ chosenAnswers }) => {
   }, [strengthUser.score]);
 
   const calculateMercuryHeight = (score) => {
+    score = Math.floor(score / 3 * 100) 
     const scoreRanges = [
       { label: 'Pathetic', height: 0 },
-      { label: 'Puny', height: 25 },
-      { label: 'Average', height: 50 },
+      { label: 'Puny', height: 33 },
+      { label: 'Average', height: 66 },
       { label: 'Jackpot!', height: 100 }
     ];
   
     const range = scoreRanges.find(range => score <= range.height);
   
-    setScoreRange(range.label);
+    setScoreRange(range);
   };
   
 
   return (
     <div style={{ textAlign: "center" }}>
+      {console.log(scoreRange)}
       <h2>Results</h2>
       <p>Number of correct answers: {strengthUser.score}</p>
       <p>Total questions: 3</p>
@@ -36,11 +38,17 @@ const TestResults = ({ chosenAnswers }) => {
       <div className="thermometer">
         <div className="thermometer-scale">
         <ul className="mercury">
-  <li style={{ height: `${scoreRange.height}%` }}>Jackpot!</li>
-  <li style={{ height: `${scoreRange.height - 25}%` }}>Average</li>
-  <li style={{ height: `${scoreRange.height - 50}%` }}>Puny</li>
-  <li style={{ height: `${scoreRange.height - 75}%` }}>Pathetic</li>
-</ul>
+{
+   strengthUser.score === 3 ?      
+  <li style={{ height: `40vh` }}>Jackpot!</li>
+  : strengthUser.score === 2 ?
+  <li style={{ height: `25vh` }}>Average</li>
+  : strengthUser.score === 1 ?
+  <li style={{ height: `15vh`, width: "60px" }}>Puny</li>
+  :
+  <li style={{ height: `3vh` }}>Pathetic</li>
+}
+  </ul>
         </div>
       </div>
     </div>

@@ -13,9 +13,9 @@ export default function Header({isLoggedIn, setIsLoggedIn}) {
         <Nav className="nav" navbar style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', listStyle: 'none'}}>
           {isLoggedIn ?
             <>
-            <NavbarBrand tag={RRNavLink} to="/" style={{ lineHeight: 2.5, textDecoration: 'none' }}>Navbar</NavbarBrand>
+            <NavbarBrand tag={RRNavLink} to="/" style={{ lineHeight: 2.5, textDecoration: 'none' }}>Home</NavbarBrand>
               <NavItem>
-                <NavLink tag={RRNavLink} to="/home" style={{ lineHeight: 2.5, textDecoration: 'none' }}>Home</NavLink>
+                <NavLink tag={RRNavLink} to="/home" style={{ lineHeight: 2.5, textDecoration: 'none' }}>Languages</NavLink>
               </NavItem>
 
               <NavItem>

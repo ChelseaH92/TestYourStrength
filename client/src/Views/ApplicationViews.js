@@ -43,9 +43,6 @@ export const ApplicationViews = () => {
                         <Button className="explain-button">
                             <Link to="/ExplainPage" >CEFR / ACTFL Explanation</Link>
                         </Button>
-                        {/* <div>
-                            ipsum Latin something something
-                        </div> */}
                     </div>
                 </div>
             } />
