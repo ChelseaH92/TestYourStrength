@@ -1,0 +1,21 @@
+.explain-page {
+    padding-top: 20px;
+  }
+  
+  .cefr-level {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .cefr-level h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .cefr-explanation {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  

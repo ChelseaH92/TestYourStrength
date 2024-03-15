@@ -5,6 +5,7 @@ import "./UserProfile.css"
 export const Account = () => {
     const [userData, setUserData] = useState({});
     const userString = localStorage.getItem("userProfile")
+    const user = JSON.parse(userString)
 
   
     const getUser = (email) => {
@@ -12,7 +13,7 @@ export const Account = () => {
     }
   
     useEffect(() => {
-      getUser(userString.email)
+      getUser(user.email)
     }, []); 
     
   console.log(userData)
