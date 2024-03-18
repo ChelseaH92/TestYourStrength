@@ -6,7 +6,11 @@ import { register } from "../APIManagers/UsersManager";
 
 export default function Register({setIsLoggedIn}) {
   const navigate = useNavigate();
-
+//   public int Id { get; set; }
+// public string Email { get; set; }
+// public string Pass { get; set; }
+// public string Username {get; set;}
+// public bool Admin { get; set;}
   const [userName, setUserName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -17,8 +21,8 @@ export default function Register({setIsLoggedIn}) {
     if (password && password !== confirmPassword) {
       alert("Passwords don't match. Try again.");
     } else {
-      const userProfile = { userName, email };
-      register(userProfile, password)
+      const userProfile = { userName: userName, email: email, admin: false, pass: password };
+      register(userProfile)
         .then(() => {
           setIsLoggedIn(true)
           navigate('/')

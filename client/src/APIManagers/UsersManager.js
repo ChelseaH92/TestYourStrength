@@ -2,7 +2,7 @@
 const apiUrl = "https://localhost:5001";
  
 export const login = (userObject) => {
-  return fetch(`${apiUrl}/api/users/${userObject.email}`)
+  return fetch(`${apiUrl}/api/Users/GetByEmail/${userObject.email}`)
   .then((r) => r.json())
     .then((userProfile) => {
       if(userProfile.id){
@@ -15,11 +15,20 @@ export const login = (userObject) => {
     });
 };
 
+export const getUserByEmail = (email) => {
+  return  fetch(`https://localhost:5001/api/Users/GetByEmail/${email}`) 
+  .then(response => response.json())  
+}
+
+export const getAllUsers = () => {
+  return fetch(`${apiUrl}/api/users/`)
+  .then((response) => response.json())
+}
 export const logout = () => {
       localStorage.clear()
 };
 
-export const register = (userObject, password) => {
+export const register = (userObject) => {
   return  fetch(`${apiUrl}/api/users`, {
     method: "POST",
     headers: {
@@ -33,3 +42,26 @@ export const register = (userObject, password) => {
     });
 };
 
+export const deleteUser = (id) => {
+  return fetch(`${apiUrl}/api/users/${id}`, 
+  {
+    method: "DELETE"
+  })
+  .then(getAllUsers)
+}
+
+export const updateUser = (userObject) => {
+  return fetch(`${apiUrl}/api/users/${userObject.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userObject)
+  })
+}
+
+export const getUserById = (id) => {
+    return  fetch(`https://localhost:5001/api/Users/${id}`) 
+    .then(response => response.json())  
+  
+}

@@ -1,0 +1,60 @@
+.level-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.level-buttons {
+    width: 300px; 
+    height: 50px;
+    padding: 1em 2em;
+    font-size: large;
+    margin: 0 0 1rem 0; 
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 5px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    text-decoration: none;
+}
+
+.level-buttons::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #9c2b15,
+      #c59f1e,
+      #223d55,
+      #9c2b15
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-language-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-language-button {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}

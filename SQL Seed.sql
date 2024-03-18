@@ -22,25 +22,30 @@ INSERT INTO answers (string, levelId, languageId) VALUES ('Soy de los Estados Un
 INSERT INTO answers (string, levelId, languageId) VALUES ('Comí esta mañana.', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Hola, ¿Cómo está?', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 1, 1);
+
 INSERT INTO answers (string, levelId, languageId) VALUES ('Hola, ¿Cómo está?', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Me llamo ___.', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Soy de los Estados Unidos.', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Comí esta mañana.', 1, 1);
+
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Soy de los Estados Unidos.', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Hola, ¿Cómo está?', 1, 1);
-INSERT INTO answers (string, levelId, languageId) VALUES ('Comí esta mañana.', 1, 1);
+INSERT INTO answers (string, levelId, languageId) VALUES ('Como todos los días', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Me llamo ___.', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 1, 1);
+
 INSERT INTO answers (string, levelId, languageId) VALUES (N'妈妈嘛马骂吗？', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我很好。', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'是的，我今天早上吃过了。', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我的名字是___。', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 1, 1);
+
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我很好。', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我的名字是___。', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'妈妈嘛马骂吗？', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'是的，我今天早上吃过了。', 1, 1);
+
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Hi, how are you?', 1, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('What is this?', 1, 1);
@@ -58,6 +63,7 @@ INSERT INTO answers (string, levelId, languageId) VALUES ('Comemos', 2, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Comen', 2, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Come', 2, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Coméis', 2, 1);
+INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 2, 1);
 
 INSERT INTO answers (string, levelId, languageId) VALUES ('Rojo', 2, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('Azul', 2, 1);
@@ -137,7 +143,7 @@ INSERT INTO answers (string, levelId, languageId) VALUES ('Creo que la educació
 INSERT INTO answers (string, levelId, languageId) VALUES ('Creo que la educación virtual es una moda pasajera y la educación presencial es la única forma válida de aprender.', 4, 1);
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 4, 1);
 
-INSERT INTO answers (string, levelId, languageId) VALUES ('', 4, 2);
+INSERT INTO answers (string, levelId, languageId) VALUES (N'在当今社会，社交媒体的广泛使用对信息传播和社交互动带来了便利，但也需要警惕其潜在的负面影响，如信息可信度和隐私问题。', 4, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我认为社交媒体是一种浪费时间，我们应该断开与之的联系。', 4, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我认为社交媒体对于与朋友和家人保持联系非常有用。', 4, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我认为社交媒体对社会没有任何影响。', 4, 2);
@@ -147,6 +153,7 @@ INSERT INTO answers (string, levelId, languageId) VALUES (N'我会建议建造�
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我会提议增加公共交通和骑自行车的使用。', 4, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我会建议禁止机动车辆通行。', 4, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我会建议忽视污染问题。', 4, 2);
+INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 4, 2);
 
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我认为学校应该只教授基础的财务知识，其他由家长负责教育。', 4, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我认为学校不应该涉足青少年的财务教育。', 4, 2);
@@ -214,10 +221,10 @@ INSERT INTO answers (string, levelId, languageId) VALUES (N'创造力对于找�
 INSERT INTO answers (string, levelId, languageId) VALUES (N'创造力是解决问题的障碍。', 6, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 6, 2);
 
-INSERT INTO answers (string, levelId, languageId) VALUES ('科技只为社会中的少数人提供利益。', 6, 2);
-INSERT INTO answers (string, levelId, languageId) VALUES ('科技对社会没有任何影响。', 6, 2);
-INSERT INTO answers (string, levelId, languageId) VALUES ('社会决定科技的进步。', 6, 2);
-INSERT INTO answers (string, levelId, languageId) VALUES ('科技可以推动社会的重大变革。', 6, 2);
+INSERT INTO answers (string, levelId, languageId) VALUES (N'科技只为社会中的少数人提供利益。', 6, 2);
+INSERT INTO answers (string, levelId, languageId) VALUES (N'科技对社会没有任何影响。', 6, 2);
+INSERT INTO answers (string, levelId, languageId) VALUES (N'社会决定科技的进步。', 6, 2);
+INSERT INTO answers (string, levelId, languageId) VALUES (N'科技可以推动社会的重大变革。', 6, 2);
 INSERT INTO answers (string, levelId, languageId) VALUES ('I have no idea what this says', 6, 2);
 
 INSERT INTO answers (string, levelId, languageId) VALUES (N'我认为政府应该采取紧急措施来减缓气候变化并促进可持续发展。', 6, 2);

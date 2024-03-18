@@ -9,6 +9,5 @@ namespace TestYourStrength.Repositories
         void Delete(int id);
         List<Questions> GetAll();
         Questions GetQuestionById(int id);
-
     }
 }

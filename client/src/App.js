@@ -4,6 +4,7 @@ import Header from './nav/Header';
 import { ApplicationViews } from './Views/ApplicationViews';
 import { useEffect } from 'react';
 import Authorize from './Auth/Authorize'
+import "./App.css"
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
